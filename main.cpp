@@ -3,10 +3,10 @@
 int main() {
     Array<5, int> arr = {{1, 2, 3, 4, 5}};
     // arr.fill(5);
-    arr[0] = 2;
-    arr[4] = 2;
+    arr.at(0) = 2;
+    arr.at(4) = 2;
     try {
-        arr[5] = 3;
+        arr.at(5) = 3;
     }
     catch (std::exception &ex) {
         std::cout << ex.what() << std::endl;

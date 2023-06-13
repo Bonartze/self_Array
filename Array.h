@@ -40,13 +40,25 @@ public:
     }
 
     const T &operator[](size_t ind) const {
+        /* if (ind < size)
+             return array[ind];*/
+        std::cout << "Index is invalid" << std::endl;
+        throw std::out_of_range("Invalid index");
+    }
+
+    T &operator[](size_t ind) {
+        std::cout << "Index is invalid" << std::endl;
+        throw std::out_of_range("Invalid index");
+    }
+
+    T &at(size_t ind) {
         if (ind < size)
             return array[ind];
         std::cout << "Index is invalid" << std::endl;
         throw std::out_of_range("Invalid index");
     }
 
-    T &operator[](size_t ind) {
+    const T &at(size_t ind) const {
         if (ind < size)
             return array[ind];
         std::cout << "Index is invalid" << std::endl;
