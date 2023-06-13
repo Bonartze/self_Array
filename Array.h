@@ -22,8 +22,12 @@ public:
     }
 
     Array(std::initializer_list<T> a) : size(N) {
-        for (int i = 0; i < size; i++)
+        if (a.size() > size)
+            throw std::out_of_range("Ambiguous size");
+        for (size_t i = 0; i < a.size(); i++)
             array[i] = *(a.begin() + i);
+        for (size_t i = a.size(); i < size; i++)
+            array[i] = 0;
     }
 
     size_t get_size() const {

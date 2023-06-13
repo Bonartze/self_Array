@@ -1,7 +1,7 @@
 #include "Array.h"
 
 int main() {
-    Array<5, int> arr = Array<5, int>({1, 2, 3, 4, 5});
+    Array<5, int> arr = {{1, 2, 3, 4, 5}};
     // arr.fill(5);
     arr[0] = 2;
     arr[4] = 2;
